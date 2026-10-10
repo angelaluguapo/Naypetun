@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://b5pnew7l3nrmp"]
+
+[ext_resource type="Script" uid="uid://bhe0ujeo1gsja" path="res://menu_controller.gd" id="1_noarx"]
+[ext_resource type="Script" uid="uid://cf4hp5ttdu76i" path="res://button_3d.gd" id="2_noarx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 0.05
+
+[sub_resource type="Sky" id="Sky_a0tk4"]
+sky_material = SubResource("ProceduralSkyMaterial_noarx")
+
+[sub_resource type="Environment" id="Environment_r3fl7"]
+background_mode = 1
+sky = SubResource("Sky_a0tk4")
+ambient_light_source = 1
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57qmd"]
+size = Vector3(6.6141357, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d0u6y"]
+size = Vector3(7.3459473, 1, 1)
+
+[node name="Menu" type="Node3D" unique_id=212686302 node_paths=PackedStringArray("camera", "zones")]
+script = ExtResource("1_noarx")
+camera = NodePath("Camera3D")
+zones = NodePath("Zones")
+travel_time = 0.2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=498987641]
+environment = SubResource("Environment_r3fl7")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=243138395]
+
+[node name="Zones" type="Node3D" parent="." unique_id=695300125]
+
+[node name="Options" type="Node3D" parent="Zones" unique_id=563996228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -6)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Zones/Options" unique_id=127687478]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.1968975, 4.6339226, 0.80903864)
+light_energy = 8.45
+light_specular = 0.0
+spot_range = 8.868
+spot_angle = 43.63
+
+[node name="CamPoint" type="Marker3D" parent="Zones/Options" unique_id=1439986972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 8)
+
+[node name="Area3D" type="Area3D" parent="Zones/Options" unique_id=1301908527]
+script = ExtResource("2_noarx")
+action = "goto:Main"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Options/Area3D" unique_id=1437721528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.753479, 0, 0)
+shape = SubResource("BoxShape3D_57qmd")
+
+[node name="Visual" type="Node3D" parent="Zones/Options/Area3D" unique_id=1262427186]
+
+[node name="Label3D" type="Label3D" parent="Zones/Options/Area3D/Visual" unique_id=547844713]
+pixel_size = 0.05
+shaded = true
+text = "wawa"
+
+[node name="Main" type="Node3D" parent="Zones" unique_id=2041653742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.975, 0, -9.74)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Zones/Main" unique_id=1102103278]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.29414082, 4.6339226, 1.455821)
+light_energy = 8.45
+light_specular = 0.0
+spot_range = 8.868
+spot_angle = 43.63
+
+[node name="CamPoint" type="Marker3D" parent="Zones/Main" unique_id=979109723]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 8)
+
+[node name="Area3D" type="Area3D" parent="Zones/Main" unique_id=2091835889]
+script = ExtResource("2_noarx")
+action = "goto:Options"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Main/Area3D" unique_id=1297820302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18396044, 0, 0)
+shape = SubResource("BoxShape3D_d0u6y")
+
+[node name="Visual" type="Node3D" parent="Zones/Main/Area3D" unique_id=1137813947]
+
+[node name="Label3D" type="Label3D" parent="Zones/Main/Area3D/Visual" unique_id=1262429656]
+pixel_size = 0.05
+shaded = true
+text = "fdbdbfbd"

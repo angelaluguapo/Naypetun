@@ -1,0 +1,33 @@
+package Nypetun;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LIstaCartas {
+    public static void main(String[] args) {
+        // Inicialización de la lista de cartas
+        List<Cartas> listaDeCartas = new ArrayList<>();
+
+        // Creación y agregado de los personajes de la tabla
+        listaDeCartas.add(new Cartas("Werkén", "Werkén otorga un mensaje, revela si la acción de lanzar una moneda será cara o cruz.", 8, 5));
+        listaDeCartas.add(new Cartas("Waikil", "Waikil hará que cada turno robes una carta extra.", 6, 4));
+        listaDeCartas.add(new Cartas("Kutral", "Kutral infligirá el daño que este reciba y empieza con una mejora de stats aleatoria (vida o fuerza).", 5, 3));
+        listaDeCartas.add(new Cartas("Nehuen", "Nehuen sabe como luchar y como dejarte KO. Si en dos turnos el oponente no cae; el siguiente golpe tendrá un daño de 20 a cambio de inutilizar objetos en las siguientes dos rondas.", 6, 4));
+        listaDeCartas.add(new Cartas("Amulen", "Amulen permitirá lanzar una moneda por cada turno, si sale cara recibirá un efecto de hechizo aleatorio, si sale cruz no recibirás nada.", 4, 3));
+        listaDeCartas.add(new Cartas("Aukan", "Espirita al rival, provocando que su habilidad pasiva no funcione.", 3, 2));
+        listaDeCartas.add(new Cartas("Sakün/Ayén", "Cuando un golpe deje a Sakün/Ayén fuera de combate; esta sobrevivirá con un punto de vida, esta habilidad no es reutilizable a menos que el golpe tenga mas de 5 puntos de daño.", 5, 4));
+        listaDeCartas.add(new Cartas("Alofan", "Alofan se pierde en el vicio, lanza una moneda, si sale cara Alofan aumentará un punto en todas sus stats (una vez cada turno, no se acumulan en rondas posteriores).", 3, 2));
+        listaDeCartas.add(new Cartas("Newen", "Cualquier efecto, mejora o lo que sea (excepto maldiciones que le infligen daño o curaciones) hará el doble de efecto.", 3, 2));
+        listaDeCartas.add(new Cartas("Lonco", "Lonco conoce todas las maldiciones, cualquier hechizo maldito que le den a Miguel no le hará efecto.", 4, 3));
+        listaDeCartas.add(new Cartas("Ayikwün", "Ayikwün puede observar los hechizos del rival en toda la ronda. Chivará información de las cartas que el rival tiene.", 3, 2));
+        listaDeCartas.add(new Cartas("Cona", "Cualquier ataque que haga Cona recuperará la mitad de la vida que Cona otorgue.", 4, 3));
+        listaDeCartas.add(new Cartas("Kimche", "Kimche sabe como ser impredecible, maldice con la maldición exclusiva ”Confusión” de este personaje, tiene una probabilidad del 25% que el rival se pegue así mismo con la mitad del daño que el rival haga.", 7, 5));
+        listaDeCartas.add(new Cartas("Linco/Waikilef", "Si Linco/Waikilef está activo; todas las habilidades pasivas de los personajes en banca pasarán a él, pero solo puede gozar una cada una por turno.", 2, 1));
+        listaDeCartas.add(new Cartas("Epian Collen", "Epian Collen saca su máscara, le revela al contrincante su verdadero rostro, el rival quedará traumado por lo que vió y no tendrá fuerzas para aceptar hechizos consumibles.", 4, 3));
+        listaDeCartas.add(new Cartas("Wentemil", "Cura un 70% de vida sin ninguna excepción a la carta principal.", 4, 3));
+        listaDeCartas.add(new Cartas("Waikil", "Permite atacar una carta en la banca rival, si la carta que atacaste tiene la vida a 0; contará como una ronda ganada.", 4, 3));
+        listaDeCartas.add(new Cartas("Nehuelcona", "Una explosión abrasadora que inflige un 70% menos de salud.", 4, 3));
+        listaDeCartas.add(new Cartas("Kimey", "Puedes desechar dos cartas de tus hechizos y robarle dos al rival con las cartas que gustes.", 4, 3));
+        listaDeCartas.add(new Cartas("Ñizawn", "Permite desechar todas tus cartas de hechizos por otras, puedes seleccionar dos a tu gusto.", 4, 3));
+    }
+}
